@@ -1,5 +1,4 @@
-![Uploading 7ec32284825729fae082c60786982a2.png…]()
-
+<img width="1600" height="900" alt="f5cd413d02cc9bc6109eeb4ff3e9d7f" src="https://github.com/user-attachments/assets/46876c13-b48d-469a-8ff2-618e1bd3d689" />
 
 # SPARK AI Hackathon
 
