@@ -28,8 +28,8 @@
 
 | **活动** | **时间** | **形式** | **相关链接** |
 | --- | --- | --- | --- |
-| **开始报名** | 2026年1月26日 20: 00 (UTC+8) | 📍 线上 | **👉 [点击此处填写报名表](https://github.com/CasualHackathon/agenthack/issues/new?template=register.md)** |
-| **报名截至** | 2026年2月1日 12: 00 (UTC+8) | 📍 线上 | **👉 [点击此处提交 Demo](https://github.com/CasualHackathon/agenthack/issues/new?template=submission.md)** |
+| **开始报名** | 2026年1月26日 20: 00 (UTC+8) | 📍 线上 | **👉 [点击此处填写报名表](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=register.md)** |
+| **报名截至** | 2026年2月1日 12: 00 (UTC+8) | 📍 线上 | **👉 [点击此处提交 Demo](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=submission.md)** |
 | 🗓**Open Day** | 2026年1月28日 19:00-20:30 (UTC+8) | 📍 线上 | [Zoom 链接][ZOOM_LINK] |
 | 🏁**Demo Day** | 2026年2月1日 20:00-21:00 (UTC+8) | 📍 线上 | [Zoom 链接][ZOOM_LINK] |
 
@@ -302,8 +302,8 @@
 - 📝 [报名表单][REGISTRATION_FORM_LINK]
 - 🎥 [教程视频 - Bilibili][VIDEO_TUTORIAL_BILIBILI]
 - 🎥 [教程视频 - YouTube][VIDEO_TUTORIAL_YOUTUBE]
-- 💬 [社区讨论](https://github.com/CasualHackathon/agenthack/discussions)
-- 🐛 [问题反馈](https://github.com/CasualHackathon/agenthack/issues)
+- 💬 [社区讨论](https://github.com/CasualHackathon/SPARK-AI-Hackathon/discussions)
+- 🐛 [问题反馈](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues)
 
 ## ℹ️ 常见问题 (FAQ)
 
