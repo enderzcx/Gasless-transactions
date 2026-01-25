@@ -24,9 +24,9 @@
 
 | 活动                 | 时间                      | 形式    | 相关链接                                                        |
 | -------------------- | ------------------------- | ------- | --------------------------------------------------------------- |
-| **开始报名**   | [REGISTRATION_START_DATE] | 📍 线上 | **👉 [点击此处填写报名表](https://github.com/CasualHackathon/agenthack/issues/new?template=register.md)** |
-| 🗓**Open Day** | [OPEN_DAY_DATE_TIME]      | 📍 线上 | **👉 [点击此处提交 Demo](https://github.com/CasualHackathon/agenthack/issues/new?template=submission.md)** |
-| 🏁**Demo Day** | [DEMO_DAY_DATE_TIME]      | 📍 线上 | [Zoom 链接][ZOOM_LINK]                                          |
+| **开始报名**   | ] | 📍 线上 | **👉 [点击此处填写报名表](https://github.com/CasualHackathon/agenthack/issues/new?template=register.md)** |
+| 🗓**Open Day** |           1月28日        | 📍 线上 | **👉 [点击此处提交 Demo](https://github.com/CasualHackathon/agenthack/issues/new?template=submission.md)** |
+| 🏁**Demo Day** | 2月1日      | 📍 线上 | [Zoom 链接][ZOOM_LINK]                                          |
 
 **报名教程：**
 
@@ -48,6 +48,7 @@
 
 
 *(注：具体奖项分配将在评审阶段公布)*
+
 
 ## 📄赛道介绍 (Tracks)
 
@@ -129,9 +130,9 @@
 | | 实战题目 | 项目方发布的实战预测任务素材 |
 | **DataDance** | SDK 文档 | [DataDance SDK 开发文档](https://docs.google.com/document/d/1xbGWsV8spQXA2ZBCmN-xJjcNvdJEWwo77edUyXh0aKs/edit) (处理数据神器) |
 
-## 03 | 项目提交要求
+## 03 | 项目提交要求(Submission Guide)
 
-**截止时间：** [SUBMISSION_DEADLINE] 前（UTC+8）
+**截止时间：**  **2026.1.30 23:59 PM 前（UTC+8）**
 
 请通过 GitHub Issues 提交以下材料：
 
