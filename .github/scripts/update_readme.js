@@ -2,9 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
+const registrationsPath = process.env.REGISTRATIONS_PATH;
+const submissionsPath = process.env.SUBMISSIONS_PATH;
 
 // Helper to extract value from issue body
 function extractValue(body, keyRegex) {
+  if (!body) return '';
   const match = body.match(keyRegex);
   return match ? match[1].trim() : '';
 }
@@ -15,107 +18,92 @@ function formatCol(text) {
   return text.replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>');
 }
 
-function updateRegistration(issue, readmeContent) {
-  const body = issue.body || '';
-  
-  // Fields match register.md template
-  const name = extractValue(body, /\*\*Name \[姓名\]:\*\*\s*(.*)/i);
-  const contact = extractValue(body, /\*\*ContactMethod.*?:\*\*\s*(.*)/i);
-  const wantsTeam = extractValue(body, /\*\*WantsTeam.*?:\*\*\s*(.*)/i);
-  const comment = extractValue(body, /\*\*Comment.*?:\*\*\s*(.*)/i);
-  
-  const githubId = issue.user.login;
-  const issueUrl = issue.html_url;
-  
-  // Table columns: | 姓名 | GitHub ID | 联系方式 | 组队意愿 | 备注 | 更新资料 |
-  const newRow = `| ${formatCol(name)} | [@${githubId}](https://github.com/${githubId}) | ${formatCol(contact)} | ${formatCol(wantsTeam)} | ${formatCol(comment)} | [Link](${issueUrl}) |`;
-  
-  const startMarker = '<!-- Registration star -->';
-  const endMarker = '<!-- Registration end -->';
-  
-  return insertRow(readmeContent, startMarker, endMarker, newRow);
+function generateRegistrationTable(issues) {
+  // Header
+  let table = '| 姓名 | GitHub ID | 联系方式 | 组队意愿 | 备注 | 更新资料 |\n';
+  table += '| --------- | --------- | -------- | -------- | ---- | -------- |\n';
+
+  if (!issues || issues.length === 0) {
+    table += '| 待更新... | - | - | - | - | - |\n';
+    return table;
+  }
+
+  issues.forEach(issue => {
+    const body = issue.body || '';
+    const name = extractValue(body, /\*\*Name \[姓名\]:\*\*\s*(.*)/i);
+    const contact = extractValue(body, /\*\*ContactMethod.*?:\*\*\s*(.*)/i);
+    const wantsTeam = extractValue(body, /\*\*WantsTeam.*?:\*\*\s*(.*)/i);
+    const comment = extractValue(body, /\*\*Comment.*?:\*\*\s*(.*)/i);
+    const githubId = issue.user.login;
+    const issueUrl = issue.html_url;
+
+    table += `| ${formatCol(name)} | [@${githubId}](https://github.com/${githubId}) | ${formatCol(contact)} | ${formatCol(wantsTeam)} | ${formatCol(comment)} | [Link](${issueUrl}) |\n`;
+  });
+
+  return table;
 }
 
-function updateSubmission(issue, readmeContent) {
-  const body = issue.body || '';
-  
-  // Fields match submission.md template
-  const projectName = extractValue(body, /\*\*ProjectName.*?:\*\*\s*(.*)/i);
-  const description = extractValue(body, /\*\*Brief description.*?:\*\*\s*(.*)/i);
-  const repoLink = extractValue(body, /\*\*Github Repo Link.*?:\*\*\s*(.*)/i);
-  
-  const githubId = issue.user.login;
-  const date = new Date().toISOString().split('T')[0];
-  
-  // Table columns: | 项目名称 | GitHub ID | 项目描述 | 项目链接 | 提交时间 |
-  const newRow = `| ${formatCol(projectName)} | [@${githubId}](https://github.com/${githubId}) | ${formatCol(description)} | [Repo](${repoLink}) | ${date} |`;
-  
-  const startMarker = '<!-- Submission star -->';
-  const endMarker = '<!-- Submission end -->';
-  
-  return insertRow(readmeContent, startMarker, endMarker, newRow);
+function generateSubmissionTable(issues) {
+  // Header
+  let table = '| 项目名称 | GitHub ID | 项目描述 | 项目链接 | 提交时间 |\n';
+  table += '| --------- | --------- | -------- | -------- | -------- |\n';
+
+  if (!issues || issues.length === 0) {
+    table += '| 待更新... | - | - | - | - |\n';
+    return table;
+  }
+
+  issues.forEach(issue => {
+    const body = issue.body || '';
+    const projectName = extractValue(body, /\*\*ProjectName.*?:\*\*\s*(.*)/i);
+    const description = extractValue(body, /\*\*Brief description.*?:\*\*\s*(.*)/i);
+    const repoLink = extractValue(body, /\*\*Github Repo Link.*?:\*\*\s*(.*)/i);
+    const githubId = issue.user.login;
+    // Use created_at or updated_at, formatted blindly as YYYY-MM-DD
+    const date = issue.created_at ? issue.created_at.split('T')[0] : '-';
+
+    table += `| ${formatCol(projectName)} | [@${githubId}](https://github.com/${githubId}) | ${formatCol(description)} | [Repo](${repoLink}) | ${date} |\n`;
+  });
+
+  return table;
 }
 
-function insertRow(content, startMarker, endMarker, newRow) {
+function replaceSection(content, startMarker, endMarker, newContent) {
   const startIndex = content.indexOf(startMarker);
   const endIndex = content.indexOf(endMarker);
-  
+
   if (startIndex === -1 || endIndex === -1) {
     console.log(`Markers not found: ${startMarker}, ${endMarker}`);
     return content;
   }
-  
-  const sectionContent = content.substring(startIndex, endIndex);
-  let newSection = sectionContent;
 
-  // Remove the "Pending update" placeholder row if it exists
-  // | 待更新... | - | ...
-  if (newSection.includes('| 待更新... |')) {
-    // Regex to remove the line containing "待更新..."
-    newSection = newSection.replace(/.*\|\s*待更新\.\.\.\s*\|.*\r?\n?/, '');
+  return content.substring(0, startIndex + startMarker.length) + '\n\n' + newContent + '\n' + content.substring(endIndex);
+}
+
+// Main execution
+try {
+  let readmeContent = fs.readFileSync(readmePath, 'utf8');
+
+  // 1. Process Registrations
+  if (fs.existsSync(registrationsPath)) {
+    const registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
+    console.log(`Found ${registrations.length} registrations.`);
+    const regTable = generateRegistrationTable(registrations);
+    readmeContent = replaceSection(readmeContent, '<!-- Registration star -->', '<!-- Registration end -->', regTable);
   }
-  
-  // Ensure we append cleanly. We look for the last pipe '|' character or just append at the end of section
-  // To avoid messing up table formatting, we appended to the end of the content before the endMarker.
-  // We trim right to remove excess newlines then add newline + newRow + newline
-  
-  newSection = newSection.trimEnd() + '\n' + newRow + '\n';
-  
-  return content.substring(0, startIndex) + newSection + content.substring(endIndex);
-}
 
-const eventPath = process.env.GITHUB_EVENT_PATH;
-if (!eventPath || !fs.existsSync(eventPath)) {
-  console.log('Event path not found');
+  // 2. Process Submissions
+  if (fs.existsSync(submissionsPath)) {
+    const submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
+    console.log(`Found ${submissions.length} submissions.`);
+    const subTable = generateSubmissionTable(submissions);
+    readmeContent = replaceSection(readmeContent, '<!-- Submission star -->', '<!-- Submission end -->', subTable);
+  }
+
+  fs.writeFileSync(readmePath, readmeContent);
+  console.log('README.md updated successfully.');
+
+} catch (error) {
+  console.error('Error updating README:', error);
   process.exit(1);
-}
-
-const event = JSON.parse(fs.readFileSync(eventPath, 'utf8'));
-const issue = event.issue;
-
-if (!issue) {
-  console.log('No issue found in event');
-  process.exit(0);
-}
-
-let newContent = fs.readFileSync(readmePath, 'utf8');
-let updated = false;
-
-const labels = issue.labels ? issue.labels.map(l => l.name) : [];
-
-if (labels.includes('registration')) {
-  console.log('Processing Registration...');
-  newContent = updateRegistration(issue, newContent);
-  updated = true;
-} else if (labels.includes('submission')) {
-  console.log('Processing Submission...');
-  newContent = updateSubmission(issue, newContent);
-  updated = true;
-} else {
-  console.log('No matching labels found (registration, submission)');
-}
-
-if (updated) {
-  fs.writeFileSync(readmePath, newContent);
-  console.log('README.md updated');
 }

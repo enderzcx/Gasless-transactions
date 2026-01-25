@@ -1,18 +1,30 @@
-name: Update README on Issue
+name: Update README on Issue Change
 on:
   issues:
-    types: [opened]
+    types: [opened, edited, deleted, reopened, labeled, unlabeled]
 
 permissions:
   contents: write
+  issues: read
 
 jobs:
-  update-readme:
+  sync-readme:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'registration') || contains(github.event.issue.labels.*.name, 'submission')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Fetch Registration Issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue list --label "registration" --state open --json number,title,body,user,html_url,created_at --limit 1000 > registrations.json
+
+      - name: Fetch Submission Issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue list --label "submission" --state open --json number,title,body,user,html_url,created_at --limit 1000 > submissions.json
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -23,7 +35,8 @@ jobs:
         run: node .github/scripts/update_readme.js
         env:
           GITHUB_WORKSPACE: ${{ github.workspace }}
-          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          REGISTRATIONS_PATH: ./registrations.json
+          SUBMISSIONS_PATH: ./submissions.json
 
       - name: Commit and Push
         run: |
@@ -33,6 +46,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update README with new issue entry [skip ci]"
+            git commit -m "Auto-sync README with latest issues [skip ci]"
             git push
           fi
