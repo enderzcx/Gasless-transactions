@@ -2,7 +2,7 @@
 
 # 你的想法，值得被实现。
 
-## 1、报名教程视频（Registration Tutorial）
+## 01 | 报名教程视频（Registration Tutorial）
 
 ## **2、注意事项（Important Notes）**
 
