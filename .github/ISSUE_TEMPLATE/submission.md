@@ -8,12 +8,18 @@ assignees: ""
 
 **ProjectName [项目名称]:**
 
-**Brief description about your project in one sentence [一句话简介]:**
+**Track [赛道]:**
+
+**TechStack [技术栈]:**
+
+**Brief description [一句话简介]:**
 
 **ProjectDescription [项目描述]:**
 
-**Wallet Address [钱包地址] (您在以太坊主网的钱包地址或 ENS 域名):**
+**Team Lead [负责人]:**
 
-**Github Repo Link [项目链接]:**
+**Team Wallet Address [团队钱包地址] (用于接收奖金，以太坊主网地址或 ENS 域名):**
+
+**Github Repo Link [Github 地址]:**
 
 **Demo Link [演示链接]:**
