@@ -54,46 +54,63 @@
 
 本次黑客松采用 **奖金池 (Prize Pool)** 形式发放奖励，总奖金池高达 **$2,500 USDT**。
 
-## 📄 赛道介绍 (Tracks)
+## 🏁 赛道与资源导航 (Tracks & Resources)
 
-本次黑客松共设立三个核心赛道，你可以根据兴趣选择其一进行挑战。
+本次黑客松共设立三个核心赛道及一个通用工具支持。请选择你感兴趣的方向，直接获取对应资源。
+
+---
 
 ### 1. 💸 支付赛道 (Payment Track)
-> **支持方**: Kite AI 
+> **支持方**: Kite AI
 
 **🎯 核心目标**
 探索 AI/Agent 场景下的自动化支付、链上结算与资金流转方案。我们需要看到 AI 不仅仅是“聊天”，还能真正地“产生交易”。
 
 **💡 开发灵感 (Ideas)**
-* **AI 购物助手**：一个能根据用户指令，自动寻找并购买数字商品（如 NFT 或 API Key）的 Agent。
-* **自动订阅管理**：监测服务状态，并在服务即将到期时自动调用钱包续费的后台 Agent。
-* **多 Agent 结算网络**：Agent A 为 Agent B 提供数据，Agent B 自动向 Agent A 支付微支付（Micro-payment）。
+* **AI 购物助手**：自动寻找并购买数字商品（如 NFT/API Key）的 Agent。
+* **自动订阅管理**：监测服务状态并在到期时自动调用钱包续费。
+* **多 Agent 结算网络**：Agent 之间的数据交换与微支付（Micro-payment）结算。
 
 **🛠 技术要求**
 * 基于 Kite AI 提供的 API 或 SDK。
-* 实现一个具备支付/结算功能的 Demo（Hello World 级别即可，重点是跑通流程）。
+* 实现一个具备支付/结算功能的 Demo（重点是跑通流程）。
+
+**📚 开发者资源 (Resources)**
+| 资源类型 | 说明与链接 |
+| :--- | :--- |
+| **API/SDK** | 包含“一键调用支付”接口文档 ([查看官网](https://gokite.ai/) 或见仓库 `/docs/kite`) |
+| **Demo 代码** | AI Agent 自动转账 Hello World 示例 |
+| **教程** | "AI 与支付链路打通" Workshop 视频/PPT |
 
 ---
 
 ### 2. 🧠 LLM 应用赛道 (LLM Application Track)
-> **支持方**: SpoonOS 
+> **支持方**: SpoonOS
 
 **🎯 核心目标**
 基于 SpoonOS Framework 调用 LLM，构建可执行的 AI 应用 / Agent 工作流。这是本次奖金最丰厚的赛道，我们期待看到完整的逻辑闭环。
 
 **💡 开发灵感 (Ideas)**
-* **Crypto 投研分析师**：自动抓取推特/新闻 -> 总结情绪 -> 生成日报并发布。
-* **社区治理 Mod**：自动回答 Discord/Telegram 群组中的技术问题，并整理常见 FAQ。
-* **垂直领域助手**：法律文书生成器、代码审计初筛 Agent 等。
+* **Crypto 投研分析师**：抓取推特/新闻 -> 总结情绪 -> 生成日报。
+* **社区治理 Mod**：自动回答 Discord 技术问题，整理 FAQ。
+* **垂直领域助手**：法律文书生成器、代码审计初筛 Agent。
 
 **🛠 技术要求**
-* 必须使用 [SpoonOS Framework](https://www.notion.so/SpoonOS-Hackathon-2f1bbd63be8780db8c59c20349715dd5?pvs=21)。
+* 必须使用 [SpoonOS Framework](https://www.notion.so/2f1bbd63be8780db8c59c20349715dd5?pvs=21)。
 * 提交的项目需展示完整的工作流（Input -> Processing -> Output）。
+
+**📚 开发者资源 (Resources)**
+| 资源类型 | 说明与链接 |
+| :--- | :--- |
+| **❗核心文档** | [**SpoonOS · 最低技术要求（必读）**](https://www.notion.so/2f1bbd63be8780db8c59c20349715dd5?pvs=21) |
+| **模板库** | 常用 Agent 工作流模板 (抓取 -> 总结 -> 发布) |
+| **FAQ** | 环境安装与模型调用报错排查手册 |
+| **Workshop** | Rick 老师的实战教学视频 |
 
 ---
 
 ### 3. 🔮 预测市场赛道 (Prediction Market Track)
-> **支持方**: OGBC × ScalingX 
+> **支持方**: OGBC × ScalingX
 
 **🎯 核心目标**
 设计具备扩展性的预测市场结构、激励机制与数据输入方案。本赛道偏向于机制设计与合约逻辑的结合。
@@ -101,39 +118,36 @@
 **💡 开发灵感 (Ideas)**
 * **新闻事件预测市场**：结合 AI 预言机，当新闻发生时自动创建预测盘口。
 * **KOL 影响力对赌**：基于社交媒体数据增长的预测合约。
-* **去中心化赛事竞猜**：利用提供的底层逻辑文档，设计一个最小化的竞猜 DApp。
+* **去中心化赛事竞猜**：设计一个最小化的竞猜 DApp。
 
 **🛠 技术要求**
 * 参考官方提供的合约交互文档或逻辑架构图。
-* 设计合理的激励机制（如何防止作恶，如何激励正确预测）。
+* 设计合理的激励机制（防作恶、激励正确预测）。
 
-### 🧰 特别工具支持 (Optional Tooling)
-**DataDance SDK**
+**📚 开发者资源 (Resources)**
+| 资源类型 | 说明与链接 |
+| :--- | :--- |
+| **学习资料** | [**OGBC-Intern-Project 学习仓库**](https://github.com/ogalias/OGBC-Intern-Project) |
+| **架构图** | 预测市场底层逻辑与合约交互图解（小白友好） |
+| **案例库** | 优秀预测市场项目参考案例 |
+| **实战题目** | 项目方发布的实战预测任务素材 |
 
-> *这是一个非强制的加分工具，适用于所有赛道的数据处理场景。*
+---
 
-* **推荐场景**: 需要进行复杂数据清洗、格式化或多源数据接入的项目（例如预测市场的数据源处理，或 LLM 的上下文预处理）。
-* **文档**: [📄 DataDance SDK 使用指南](https://docs.google.com/document/d/1xbGWsV8spQXA2ZBCmN-xJjcNvdJEWwo77edUyXh0aKs/edit)
-* **说明**: 鼓励选手尝试使用，可能会让你的 Demo 数据流转更加顺滑。
+### 🧰 通用工具支持 (Optional Tooling)
+> **支持方**: DataDance
 
-## 🛠 开发者资源 (Developer Resources)
+**🎯 工具定位**
+这是一个**非强制的加分工具**，适用于所有赛道的数据处理场景。
 
-为了让你专注于开发，我们整理了各赛道的“武器库”。
+**💡 推荐场景**
+* 需要进行复杂数据清洗、格式化或多源数据接入的项目（例如预测市场的数据源处理，或 LLM 的上下文预处理）。
 
-| 赛道 (Track) | 项目方 (Provider) | 资源类型 (Type) | 说明与链接 (Description & Links) |
-| --- | --- | --- | --- |
-| **支付赛道** | **Kite AI** | API/SDK | 包含“一键调用支付”接口文档（见仓库 `/docs/kite` 或官方链接https://gokite.ai/） |
-|  |  | Demo 代码 | AI Agent 自动转账 Hello World 示例（Helo World) |
-|  |  | 教程 | "AI 与支付链路打通" Workshop 视频/PPT |
-| **LLM 应用赛道** | **SpoonOS** | ❗核心文档 | [**SpoonOS · 最低技术要求（必读）**](https://www.notion.so/2f1bbd63be8780db8c59c20349715dd5?pvs=21) |
-|  |  | 模板库 | 常用 Agent 工作流模板 (抓取 -> 总结 -> 发布) |
-|  |  | FAQ | 环境安装与模型调用报错排查手册 |
-|  |  | Workshop | Rick 老师的实战教学视频 |
-| **预测市场赛道** | **OGBC x ScalingX** | 架构图 | 预测市场底层逻辑与合约交互图解 |
-|  |  | 案例库 | 优秀预测市场项目参考案例 |
-|  |  | 实战题目 | 项目方发布的实战预测任务素材 |
-|  |  | 学习资料 | [OGBC-Intern-Project 学习仓库](https://github.com/ogalias/OGBC-Intern-Project) |
-| **通用工具** | **DataDance** | SDK 文档 | [DataDance SDK 开发文档](https://docs.google.com/document/d/1xbGWsV8spQXA2ZBCmN-xJjcNvdJEWwo77edUyXh0aKs/edit) (处理数据神器) |
+**📚 开发者资源 (Resources)**
+| 资源类型 | 说明与链接 |
+| :--- | :--- |
+| **SDK 文档** | [**DataDance SDK 使用指南**](https://docs.google.com/document/d/1xbGWsV8spQXA2ZBCmN-xJjcNvdJEWwo77edUyXh0aKs/edit) (处理数据神器) |
+
 ## 项目提交要求(Submission Guide)
 
 **⏰Demo提交截止时间：** **2026.2.1 12:00 前（UTC+8）**
