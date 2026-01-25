@@ -142,7 +142,7 @@
 - **推荐场景**: 适用于所有赛道的数据处理，需要进行复杂数据清洗、格式化或多源数据接入的项目（例如预测市场的数据源处理，或 LLM 的上下文预处理）。
 - **文档说明**: [📄 DataDance SDK 使用指南](https://docs.google.com/document/d/1xbGWsV8spQXA2ZBCmN-xJjcNvdJEWwo77edUyXh0aKs/edit)
 
-## **03 | Demo Day 路演指南**
+## **03 | Demo Day 路演指南（Demo Day Guide）**
 
 **时间：** 2026 年 2 月 1 日 20:00-22:00 (UTC+8)
 
