@@ -1,0 +1,91 @@
+name: Sign up Issue Automation
+
+on:
+  issues:
+    types: [opened, closed]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: hackathon-automation-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  process-signup:
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'registration')) ||
+      (github.event.action == 'closed' && github.event.issue.state_reason == 'completed' && contains(github.event.issue.labels.*.name, 'registration') && github.actor != 'github-actions[bot]')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Signup Info, Create Registration File and Update Table
+        id: extract-signup
+        run: |
+          node materials/scripts/signup_extract.js
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        continue-on-error: true
+
+      - name: Handle failure (comment on issue)
+        if: steps.extract-signup.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+                const { owner, repo } = context.repo;
+                const issue_number = context.payload.issue.number;
+
+                await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body: `❌ 注册失败：未检测到报名信息，请核对以下信息是否填写正确：
+                - 姓名
+                - 联系方式
+                - 组队意愿
+                ⚠️ 填写时请注意：冒号":"后面紧跟内容，不要换行。`
+                });  
+        
+      - name: Comment and close issue
+        if: steps.extract-signup.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.issue.number;
+            const name = '${{ steps.extract-signup.outputs.name }}';
+            const user = context.payload.issue.user.login;
+
+            try {
+              // 添加成功处理的评论
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body: `✅ Registration processed successfully! ${context.payload.action === 'opened' ? '(Auto)' : '(Manual)'}`
+              });
+              
+              // 只有在自动触发时才关闭 issue
+              if (context.payload.action === 'opened') {
+                await github.rest.issues.update({
+                  owner,
+                  repo,
+                  issue_number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+              }
+              
+              console.log(`✅ Issue #${issue_number} processed and closed successfully`);
+            } catch (error) {
+              console.error(`Error processing issue: ${error.message}`);
+              core.setFailed(`Error processing issue: ${error.message}`);
+            }
