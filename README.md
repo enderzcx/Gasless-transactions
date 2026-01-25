@@ -264,6 +264,7 @@ Fork 本仓库到你的个人 GitHub，并 Clone 到本地。
 <!-- Submission start -->
 | 项目名称 | GitHub ID | 项目描述 | 项目链接 | 提交时间 |
 | ----------- | ----------------- | -------------- | ------ | -------- |
+| Spark AI | Serenayyy123 | test | [Repo](https://github.com/Serenayyy123/EverEcho-on-ZetaChain) \| [Folder](https://github.com/CasualHackathon/agenthack/tree/main/submissions/Serenayyy123) | - |
 | 测试 | beetroot42 | 测试 | [Repo](测试) \| [Folder](https://github.com/CasualHackathon/agenthack/tree/main/submissions/beetroot42) | - |
 
 <!-- Submission end -->
