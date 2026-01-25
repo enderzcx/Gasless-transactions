@@ -33,9 +33,10 @@ function extractValue(body, keyRegex) {
   }
 
   // Find the start of the next key to determine where the current value ends.
-  // We assume the next key starts on a new line with **, and contains a colon.
-  // This is a common pattern in the provided templates.
-  const nextKeyRegex = /\r?\n\s*\*\*.*(:|：)/;
+  // Find the start of the next key to determine where the current value ends.
+  // We assume the next key starts on a new line, optional **, contains [...], and a colon.
+  // This helps avoid matching random lines with colons in the user's content.
+  const nextKeyRegex = /\r?\n\s*(?:\*\*)?.*?\[.*?\].*(:|：)/;
   const nextMatch = remaining.match(nextKeyRegex);
 
   let value = '';
@@ -84,10 +85,11 @@ function generateRegistrationTable(issues) {
     // Extract fields based on the "register.md" template structure
     // Improved Regex keys to match the exact template structure
     // We look for the literal strings used in the template
-    const name = extractValue(body, /\*\*Name \[姓名\]:/);
-    const contact = extractValue(body, /\*\*ContactMethod.*?\)(:|：)/); // Handle (Format: ...) instructions containing colons
-    const wantsTeam = extractValue(body, /\*\*WantsTeam.*?(:|：)/);
-    const comment = extractValue(body, /\*\*Comment.*?(:|：)/);
+    // Extract fields - updated to be more robust (optional **, flexible colon)
+    const name = extractValue(body, /(?:\*\*)?Name \[姓名\].*?(:|：)/);
+    const contact = extractValue(body, /(?:\*\*)?ContactMethod.*?\)(:|：)/);
+    const wantsTeam = extractValue(body, /(?:\*\*)?WantsTeam.*?(:|：)/);
+    const comment = extractValue(body, /(?:\*\*)?Comment.*?(:|：)/);
 
     const githubId = issue.author ? issue.author.login : 'unknown';
     const issueUrl = issue.url;
@@ -118,10 +120,10 @@ function generateSubmissionTable(issues) {
   issues.forEach(issue => {
     const body = issue.body || '';
 
-    // Extract fields based on the "submission.md" template structure
-    const projectName = extractValue(body, /\*\*ProjectName.*?(:|：)/);
-    const description = extractValue(body, /\*\*Brief description.*?(:|：)/); // Should match the one sentence description
-    const repoLink = extractValue(body, /\*\*Github Repo Link.*?(:|：)/);
+    // Extract fields - updated to be more robust
+    const projectName = extractValue(body, /(?:\*\*)?ProjectName.*?(:|：)/);
+    const description = extractValue(body, /(?:\*\*)?Brief description.*?(:|：)/);
+    const repoLink = extractValue(body, /(?:\*\*)?Github Repo Link.*?(:|：)/);
 
     const githubId = issue.author ? issue.author.login : 'unknown';
     // Format date as YYYY-MM-DD
