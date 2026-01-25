@@ -253,7 +253,7 @@ Fork 本仓库到你的个人 GitHub，并 Clone 到本地。
 <!-- Registration start -->
 | 姓名 | GitHub ID | 联系方式 | 组队意愿 | 备注 | 更新资料 |
 | ---- | ----------- | ----------- | ----------- | ------- | ------- |
-| 张三 | zhangsan | WeChat: zhangsan123 | 是 |下午在线 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20%E5%BC%A0%E4%B8%89&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20%E5%BC%A0%E4%B8%89%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20WeChat%3A%20zhangsan123%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%98%AF%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E4%B8%8B%E5%8D%88%E5%9C%A8%E7%BA%BF) |
+| 李四 | lisi | WeChat: lisi456 | 是 |晚上有空 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20%E6%9D%8E%E5%9B%9B&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20%E6%9D%8E%E5%9B%9B%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20WeChat%3A%20lisi456%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%98%AF%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%99%9A%E4%B8%8A%E6%9C%89%E7%A9%BA) |
 
 <!-- Registration end -->
 
