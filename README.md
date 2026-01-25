@@ -12,7 +12,7 @@
 - [ZOOM_LINK] - Demo Day Zoom 链接
 -->
 
-☄当 AI 撞击 Web3，让创意真正落地
+☄当 AI 撞击 Web3，让创意真正落地！
 
 **SPARK AI Hackathon** 是一场面向所有人的 **休闲黑客松（Casual Hackathon）**。
 
