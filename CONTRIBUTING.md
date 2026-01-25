@@ -2,9 +2,9 @@
 
 Thanks for your interest in contributing!
 
-##1. **报名教程视频**
+## 1、报名教程视频
 
-## **2.注意事项：**
+## **2、注意事项：**
 
 1. 禁止修改他人信息。
 2. 提交 Demo 时必须先完成注册报名，否则提交无效。
@@ -12,7 +12,7 @@ Thanks for your interest in contributing!
 4. 提交报名后，预计 1 分钟内会显示在下方报名列表中，如未显示请联系相关技术人员。
 5. 提交 Demo 时，请先 Fork 当前代码库，然后将 Demo 相关代码放到以你 Github ID 命名的目录下，如：`/submission/[your-github-account]`，然后再提交 PR，我们会在审阅后合并。
 
-## **3. 项目提交要求(Submission Guide)**
+## **3、项目提交要求(Submission Guide)**
 
 **⏰ Demo 提交截止时间：** **2026.2.1 12:00 前（UTC+8）**
 
@@ -39,7 +39,7 @@ Thanks for your interest in contributing!
 注意：如果你使用了多个赛道的技术（例如用 SpoonOS 写了一个带 Kite 支付功能的 Agent），请在赛道中注明“混合赛道”，并在技术栈中详细列出。
 ```
 
-## **4. 报名列表**
+## **4、报名列表**
 
 | **姓名** | **GitHub ID** | **联系方式** | **组队意愿** | **备注** | **更新资料** |
 | --- | --- | --- | --- | --- | --- |
@@ -47,7 +47,7 @@ Thanks for your interest in contributing!
 | 测试 | beetroot42 | 测试 | 测试 | 测试 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20%E6%B5%8B%E8%AF%95&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20%E6%B5%8B%E8%AF%95%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%E6%B5%8B%E8%AF%95%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%B5%8B%E8%AF%95%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%B5%8B%E8%AF%95) |
 | 测试 | lejusuelge-star | 测试 | 测啊 | 测试 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20%E6%B5%8B%E8%AF%95&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20%E6%B5%8B%E8%AF%95%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%E6%B5%8B%E8%AF%95%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%B5%8B%E5%95%8A%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%B5%8B%E8%AF%95) |
 
-## **5. 项目提交名单**
+## **5、项目提交名单**
 
 | **项目名称** | **GitHub ID** | **项目描述** | **项目链接** | **提交时间** |
 | --- | --- | --- | --- | --- |
