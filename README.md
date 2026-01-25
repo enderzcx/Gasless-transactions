@@ -254,14 +254,6 @@
 
 - `docs/REGISTRATION.md`
 
-## 🔗 快速链接
-
-- 📝 [报名表单][REGISTRATION_FORM_LINK]
-- 📄 [报名/提交名单](docs/REGISTRATION.md)
-- 🎥 [教程视频 - Bilibili][VIDEO_TUTORIAL_BILIBILI]
-- 🎥 [教程视频 - YouTube][VIDEO_TUTORIAL_YOUTUBE]
-- 💬 [社区讨论](https://github.com/CasualHackathon/SPARK-AI-Hackathon/discussions)
-- 🐛 [问题反馈](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues)
 
 ## **06｜常见问题 (FAQ)**
 
@@ -274,3 +266,9 @@
 **Q: 代码必须在黑客松期间完成吗？** A: 是的，所有代码需要在活动期间提交。可以基于现有框架进行开发。
 
 **Q: 获奖后有什么后续支持？** A: 将有机会进入获奖赛道的**长期生态孵化**，**官方推广、合作伙伴曝光以及开发资源支持**。
+
+## 🔗 快速链接
+
+- 💬 [社区讨论](https://github.com/CasualHackathon/SPARK-AI-Hackathon/discussions)
+- 🐛 [问题反馈](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues)
+
