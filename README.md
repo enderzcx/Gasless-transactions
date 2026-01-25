@@ -316,7 +316,6 @@ A: [FOLLOW_UP_SUPPORT]
 
 ## 📧 联系我们
 
-- **主办方：** 残酷共学
 - **技术支持：** [TECH_CONTACT_EMAIL]
 - **运营协调：** [OPS_CONTACT_EMAIL]
 - **微信社群：** [WECHAT_GROUP_INFO]
