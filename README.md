@@ -41,7 +41,7 @@
 
 **报名/提交名单查看：** [docs/REGISTRATION.md](docs/REGISTRATION.md)
 
-**赛事交流群：**
+**赛事交流群：（如果社群已满 200 人，需添加运营人员微信邀请入群： clynn2024）**
 <p align="center">
     <img src="./materials/images/QR code.png" alt="QR Code" width="200" />
   </p>
