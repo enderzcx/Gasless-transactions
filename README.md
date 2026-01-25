@@ -22,7 +22,7 @@
 
 ![Agent Hack Banner][BANNER_IMAGE_PATH]
 
-## 01 | 报名方式与议程安排（Registration & Schedule）
+## 报名方式与议程安排（Registration & Schedule）
 
 📍 线上举行｜自由报名（面向所有人）
 
