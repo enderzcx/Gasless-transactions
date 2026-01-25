@@ -13,17 +13,21 @@ const readmePath = path.join(process.env.GITHUB_WORKSPACE, 'README.md');
 const registrationsPath = process.env.REGISTRATIONS_PATH;
 const submissionsPath = process.env.SUBMISSIONS_PATH;
 
-/**
- * Extracts a specific value from the Issue Body using Regex.
- * The regex targets the format "**Key [Label]:** Value".
- * @param {string} body - The body text of the GitHub Issue
- * @param {RegExp} keyRegex - Regex to match the key/label
- * @returns {string} The extracted value or empty string if not found
- */
+// Helper to extract value from issue body
+// Matches **Key:** ...value... until the next **Key:** or End of String
 function extractValue(body, keyRegex) {
   if (!body) return '';
-  const match = body.match(keyRegex);
-  // match[1] contains the captured group (the value)
+  // Construct a regex that finds the key, then captures everything until the next double asterisk or end of string
+  // We use the source of the keyRegex effectively
+  const keySource = keyRegex.source;
+  // This regex matches:
+  // 1. The key pattern
+  // 2. \s* matches optional whitespace/newlines
+  // 3. ([\s\S]*?) matches ANY character (including newlines) non-greedily
+  // 4. (?=\*\*|$) lookahead for next bold section or end of string
+  const regex = new RegExp(keySource + '\\s*([\\s\\S]*?)(?=\\*\\*|$)', 'i');
+
+  const match = body.match(regex);
   return match ? match[1].trim() : '';
 }
 
@@ -61,10 +65,12 @@ function generateRegistrationTable(issues) {
     const body = issue.body || '';
 
     // Extract fields based on the "register.md" template structure
-    const name = extractValue(body, /\*\*Name \[姓名\]:\*\*\s*(.*)/i);
-    const contact = extractValue(body, /\*\*ContactMethod.*?:\*\*\s*(.*)/i);
-    const wantsTeam = extractValue(body, /\*\*WantsTeam.*?:\*\*\s*(.*)/i);
-    const comment = extractValue(body, /\*\*Comment.*?:\*\*\s*(.*)/i);
+    // Improved Regex keys to match the exact template structure
+    // We look for the literal strings used in the template
+    const name = extractValue(body, /\*\*Name \[姓名\]:/);
+    const contact = extractValue(body, /\*\*ContactMethod.*?(:|：)/); // Handle potential Chinese colon
+    const wantsTeam = extractValue(body, /\*\*WantsTeam.*?(:|：)/);
+    const comment = extractValue(body, /\*\*Comment.*?(:|：)/);
 
     const githubId = issue.author ? issue.author.login : 'unknown';
     const issueUrl = issue.url;
@@ -96,9 +102,9 @@ function generateSubmissionTable(issues) {
     const body = issue.body || '';
 
     // Extract fields based on the "submission.md" template structure
-    const projectName = extractValue(body, /\*\*ProjectName.*?:\*\*\s*(.*)/i);
-    const description = extractValue(body, /\*\*Brief description.*?:\*\*\s*(.*)/i);
-    const repoLink = extractValue(body, /\*\*Github Repo Link.*?:\*\*\s*(.*)/i);
+    const projectName = extractValue(body, /\*\*ProjectName.*?(:|：)/);
+    const description = extractValue(body, /\*\*Brief description.*?(:|：)/); // Should match the one sentence description
+    const repoLink = extractValue(body, /\*\*Github Repo Link.*?(:|：)/);
 
     const githubId = issue.author ? issue.author.login : 'unknown';
     // Format date as YYYY-MM-DD
