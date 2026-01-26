@@ -4,7 +4,7 @@ const { parseIssueFields, parseFieldFromContent } = require('../utils/field-pars
 const UserManager = require('../services/user-manager');
 const ReadmeManager = require('../services/readme-manager');
 const GitManager = require('../utils/git-manager');
-const { DIRECTORIES, FILE_NAMES, FIELD_NAMES, STATUS_INDICATORS } = require('../config/constants');
+const { DIRECTORIES, FILE_NAMES, FIELD_NAMES, STATUS_INDICATORS, GITHUB_CONFIG } = require('../config/constants');
 
 /**
  * 项目提交处理器
@@ -157,6 +157,35 @@ ${FIELD_NAMES.SUBMISSION.TEAM_WALLET_ADDRESS}: ${teamWalletAddress}`;
     }
 
     /**
+     * 生成编辑用的 Issue Body（使用 Issue 模板格式以便正确回填）
+     * @param {Object} row - 提交数据行
+     * @returns {string} Issue body 内容
+     */
+    static generateEditIssueBody(row) {
+        return `## 参赛项目提交
+
+> 📝 **请在 ">" 后填写内容**
+
+**ProjectName** (请输入您的项目名称 | 必填)
+>${row.projectName}
+
+**Track** (赛道: 支付赛道 / LLM 应用赛道 / 预测市场赛道 | 必填)
+>${row.track}
+
+**ProjectDescription** (项目描述 | 必填)
+>${row.projectDescription}
+
+**Github Repo Link** (开源仓库地址 - 项目必须开源)
+>${row.repoLink}
+
+**Team Lead** (项目负责人姓名 | 必填)
+>${row.teamLead}
+
+**Team Wallet Address** (列出所有团队成员的钱包地址，用逗号分隔，例如：Alice:0x12345...，Bob:0x12345...):
+>${row.teamWalletAddress}`;
+    }
+
+    /**
      * 生成提交表格内容
      * @param {Array} rows - 提交数据行
      * @param {string} submissionRoot - 提交根目录
@@ -166,10 +195,11 @@ ${FIELD_NAMES.SUBMISSION.TEAM_WALLET_ADDRESS}: ${teamWalletAddress}`;
         let table = '| 项目名称 | 项目描述 | 负责人 | 仓库 | 操作 |\n| ----------- | -------------- | ------ | ------ | ------ |\n';
 
         rows.forEach(row => {
-            // 生成编辑链接
-            const editUrl = `https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=submission.md`;
+            const issueTitle = `${GITHUB_CONFIG.ISSUE_TITLE_PREFIXES.SUBMISSION}: ${row.projectName}`;
+            const issueBody = this.generateEditIssueBody(row);
+            const issueUrl = ReadmeManager.generateIssueUrl(issueTitle, issueBody);
 
-            table += `| ${row.projectName} | ${row.projectDescription} | ${row.teamLead} | [🔗](${row.repoLink}) | [编辑](${editUrl}) |\n`;
+            table += `| ${row.projectName} | ${row.projectDescription} | ${row.teamLead} | [🔗](${row.repoLink}) | [编辑](${issueUrl}) |\n`;
         });
 
         return table;

@@ -138,6 +138,32 @@ ${FIELD_NAMES.REGISTRATION.COMMENT}: ${comment}
     }
 
     /**
+     * 生成编辑用的 Issue Body（使用 Issue 模板格式以便正确回填）
+     * @param {Object} row - 注册数据行
+     * @returns {string} Issue body 内容
+     */
+    static generateEditIssueBody(row) {
+        return `## 报名参赛
+
+> 📝 **请在 ">" 后填写内容**
+
+**Name** (请输入您的全名 | 必填)
+>${row.name}
+
+**Introduction** (简要的个人介绍，包括技能和经验 | 必填)
+>${row.introduction}
+
+**ContactMethod** (格式: Telegram: @username，微信: username，邮箱: email@example.com)
+>${row.contactMethod}
+
+**WantsTeam** (选择一项：是 | 否 | 可能)
+>${row.WantsTeam}
+
+**Comment** (备注):
+>${row.comment}`;
+    }
+
+    /**
      * 生成注册表格内容
      * @param {Array} rows - 注册数据行
      * @returns {string} 表格内容
@@ -146,8 +172,8 @@ ${FIELD_NAMES.REGISTRATION.COMMENT}: ${comment}
         let table = '| # | 姓名 | 个人介绍 | 联系方式 | 组队意愿 | 备注 | 更新资料 |\n| --- | ---- | ----------- | ----------- | ----------- | ------- | ------- |\n';
 
         rows.forEach((row, index) => {
-            const issueTitle = `${GITHUB_CONFIG.ISSUE_TITLE_PREFIXES.REGISTRATION} - ${row.name}`;
-            const issueBody = `${FIELD_NAMES.REGISTRATION.NAME}: ${row.name}\n${FIELD_NAMES.REGISTRATION.INTRODUCTION}: ${row.introduction}\n${FIELD_NAMES.REGISTRATION.CONTACT_METHOD}: ${row.contactMethod}\n${FIELD_NAMES.REGISTRATION.WANTS_TEAM}: ${row.WantsTeam}\n${FIELD_NAMES.REGISTRATION.COMMENT}: ${row.comment}`;
+            const issueTitle = `${GITHUB_CONFIG.ISSUE_TITLE_PREFIXES.REGISTRATION}: ${row.name}`;
+            const issueBody = this.generateEditIssueBody(row);
             const issueUrl = ReadmeManager.generateIssueUrl(issueTitle, issueBody);
 
             table += `| ${index + 1} | ${row.name} | ${row.introduction} | ${row.contactMethod} | ${row.WantsTeam} | ${row.comment} | [编辑](${issueUrl}) |\n`;

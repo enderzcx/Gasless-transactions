@@ -48,10 +48,10 @@ const GIT_CONFIG = {
 
 // GitHub 相关配置
 const GITHUB_CONFIG = {
-    REPO_URL: 'https://github.com/CasualHackathon/agenthack',
+    REPO_URL: 'https://github.com/CasualHackathon/SPARK-AI-Hackathon',
     ISSUE_TITLE_PREFIXES: {
-        REGISTRATION: ['Registration', '报名参赛'],
-        SUBMISSION: ['Submission', '参赛项目提交']
+        REGISTRATION: 'Registration',
+        SUBMISSION: 'Submission'
     }
 };
 
