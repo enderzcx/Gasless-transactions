@@ -23,11 +23,9 @@
 
 ## 🗓️报名方式与日程安排（Registration & Schedule）
 
-赛事总览：1 月 26 日 – 1 月 1 日；全程线上。
+赛事总览：1 月 26 日 – 2 月 1 日；全程线上。
 
 这里不比通宵、不拼履历、不设隐形门槛——我们关心的，从来不是你写了多少行代码，而是你的想法，是否真的能点燃火花。
-| 活动 (Event) | 时间 (Time UTC+8) | 形式 (Format) | 相关链接 (Link) |
-| --- | --- | --- | --- |
 
 | 活动 (Event) | 时间 (Time UTC+8) | 形式 (Format) | 相关链接 (Link) |
 | --- | --- | --- | --- |
@@ -42,8 +40,8 @@
 
 **开始报名 & 组队：[**👉 点击此处报名**](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=register.md) |
 **报名/提交名单查看：** [docs/REGISTRATION.md](docs/REGISTRATION.md)
- [**报名教程**](https://github.com/CasualHackathon/SPARK-AI-Hackathon/tree/main?tab=contributing-ov-file) ：
 
+ [**报名教程**](https://github.com/CasualHackathon/SPARK-AI-Hackathon/tree/main?tab=contributing-ov-file) ：
 - [Bilibili][VIDEO_TUTORIAL_BILIBILI]
 - [YouTube][VIDEO_TUTORIAL_YOUTUBE]
 
