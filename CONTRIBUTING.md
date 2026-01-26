@@ -52,7 +52,7 @@
 
 | # | 姓名 | 个人介绍 | 联系方式 | 组队意愿 | 赛道选择 | 备注 | 更新资料 |
 | --- | --------- | -------- | -------- | -------- | -------- | ---- | -------- |
-| 1 | D | D | D | D | - | D | [编辑](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/51) |
+| 1 | d | d | d | d | - | d | [编辑](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/52) |
 
 <!-- Registration end -->
 
