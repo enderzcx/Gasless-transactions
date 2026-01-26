@@ -13,6 +13,7 @@ const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
 const registrationDocPath = process.env.REGISTRATION_DOC_PATH
   ? path.resolve(workspace, process.env.REGISTRATION_DOC_PATH)
   : path.join(workspace, 'docs', 'REGISTRATION.md');
+const contributingPath = path.join(workspace, 'CONTRIBUTING.md');
 const readmePath = path.join(workspace, 'README.md');
 const registrationsPath = process.env.REGISTRATIONS_PATH;
 const submissionsPath = process.env.SUBMISSIONS_PATH;
@@ -169,12 +170,18 @@ try {
   let regTable = '';
   let subTable = '';
 
+  // Read CONTRIBUTING.md
+  let contributingContent = fs.readFileSync(contributingPath, 'utf8');
+
   // 1. Process Registrations Table
   if (fs.existsSync(registrationsPath)) {
     registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
     console.log(`Found ${registrations.length} registrations.`);
     const regTable = generateRegistrationTable(registrations);
+
+    // Update both files
     readmeContent = replaceSection(readmeContent, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
+    contributingContent = replaceSection(contributingContent, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
   } else {
     console.log('No registrations file found, skipping registration update.');
   }
@@ -184,14 +191,20 @@ try {
     submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
     console.log(`Found ${submissions.length} submissions.`);
     const subTable = generateSubmissionTable(submissions);
+
+    // Update both files
     readmeContent = replaceSection(readmeContent, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
+    contributingContent = replaceSection(contributingContent, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
   } else {
     console.log('No submissions file found, skipping submission update.');
   }
 
-  // Write changes back to registration doc
+  // Write changes back to both files
   fs.writeFileSync(registrationDocPath, readmeContent);
   console.log('Registration doc updated successfully.');
+
+  fs.writeFileSync(contributingPath, contributingContent);
+  console.log('CONTRIBUTING.md updated successfully.');
 
   // Update README summary + tables (counts + link)
   if (fs.existsSync(readmePath)) {
