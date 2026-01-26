@@ -8,13 +8,7 @@
 [参赛项目提交 ➡️](<https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=submission.md>)
 
 **报名教程**  
-
-<video
-  src="https://hackathon.draken-eth.cc.cd/demo.mp4"
-  controls
-  preload="metadata"
-  width="600">
-</video>
+[](https://hackathon.draken-eth.cc.cd/demo.mp4)
 
 ## **02 | 注意事项（Important Notes）**
 
