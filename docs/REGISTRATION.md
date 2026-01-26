@@ -27,6 +27,7 @@
 
 | 项目名称 | GitHub ID | 项目描述 | 项目链接 | 提交时间 |
 | --------- | --------- | -------- | -------- | -------- |
+| [提交] 项目名称 | [@rebelrebel-tech](https://github.com/rebelrebel-tech) | - | [Repo]() | 2026-01-26 |
 | [提交] 项目 | [@beetroot42](https://github.com/beetroot42) | - | [Repo]() | 2026-01-25 |
 
 <!-- Submission end -->
