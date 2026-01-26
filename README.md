@@ -38,12 +38,16 @@
 | 🏆 获奖公示 (Awards) | 2月4日 | 📍 社区公告 | X 链接（待补充） |
 
 
-**开始报名 & 组队：[**👉 点击此处报名**](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=register.md) |
-**报名/提交名单查看：** [docs/REGISTRATION.md](docs/REGISTRATION.md)
+**开始报名 & 组队**  
+👉 [点击此处报名](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=register.md)
 
- [**报名教程**](https://github.com/CasualHackathon/SPARK-AI-Hackathon/tree/main?tab=contributing-ov-file) ：
-- [Bilibili][VIDEO_TUTORIAL_BILIBILI]
-- [YouTube][VIDEO_TUTORIAL_YOUTUBE]
+**报名 / 提交名单查看**  
+👉 [docs/REGISTRATION.md](docs/REGISTRATION.md)
+
+**报名教程**  
+- [Bilibili 教程](https://www.bilibili.com/xxxx)
+- [YouTube 教程](https://www.youtube.com/xxxx)
+
 
 **赛事交流群：（如果社群已满 200 人，需添加运营人员微信邀请入群： clynn2024）**
 <p align="center">
