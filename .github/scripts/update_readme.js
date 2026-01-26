@@ -36,9 +36,8 @@ function extractValue(body, keyRegex) {
   }
 
   // Find the start of the next key to determine where the current value ends.
-  // We assume the next key starts on a new line with **, and contains a colon.
-  // This is a common pattern in the provided templates.
-  const nextKeyRegex = /\r?\n\s*\*\*.*(:|：)/;
+  // Support both bold and plain field labels (e.g. "**Name [姓名]:**" or "Name [姓名]:").
+  const nextKeyRegex = /\r?\n\s*(?:\*\*)?[^\n]*\[.*?\][^\n]*(:|：)/;
   const nextMatch = remaining.match(nextKeyRegex);
 
   let value = '';
@@ -87,11 +86,11 @@ function generateRegistrationTable(issues) {
     // Extract fields based on the "register.md" template structure
     // Improved Regex keys to match the exact template structure
     // We look for the literal strings used in the template
-    const name = extractValue(body, /\*\*Name \[姓名\]:/) || (issue.title || '');
-    const contact = extractValue(body, /\*\*ContactMethod.*?(:|：)/); // Handle potential Chinese colon
-    const wantsTeam = extractValue(body, /\*\*WantsTeam.*?(:|：)/);
-    const track = extractValue(body, /\*\*(Track|赛道).*?(:|：)/);
-    const comment = extractValue(body, /\*\*Comment.*?(:|：)/);
+    const name = extractValue(body, /(?:\*\*)?Name \[姓名\]:(?:\*\*)?/) || (issue.title || '');
+    const contact = extractValue(body, /(?:\*\*)?ContactMethod.*?(:|：)(?:\*\*)?/); // Handle potential Chinese colon
+    const wantsTeam = extractValue(body, /(?:\*\*)?WantsTeam.*?(:|：)(?:\*\*)?/);
+    const track = extractValue(body, /(?:\*\*)?(Track|赛道).*?(:|：)(?:\*\*)?/);
+    const comment = extractValue(body, /(?:\*\*)?Comment.*?(:|：)(?:\*\*)?/);
 
     const githubId = issue.author ? issue.author.login : 'unknown';
     const issueUrl = issue.url;
