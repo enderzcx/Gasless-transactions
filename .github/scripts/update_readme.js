@@ -13,6 +13,8 @@ const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
 const registrationDocPath = process.env.REGISTRATION_DOC_PATH
   ? path.resolve(workspace, process.env.REGISTRATION_DOC_PATH)
   : path.join(workspace, 'docs', 'REGISTRATION.md');
+const contributingPath = path.join(workspace, 'CONTRIBUTING.md');
+const readmePath = path.join(workspace, 'README.md');
 const registrationsPath = process.env.REGISTRATIONS_PATH;
 const submissionsPath = process.env.SUBMISSIONS_PATH;
 
@@ -163,30 +165,61 @@ function replaceSection(content, startMarker, endMarker, newContent) {
 try {
   // Read current registration doc
   let readmeContent = fs.readFileSync(registrationDocPath, 'utf8');
+  let registrations = [];
+  let submissions = [];
+  let regTable = '';
+  let subTable = '';
+
+  // Read CONTRIBUTING.md
+  let contributingContent = fs.readFileSync(contributingPath, 'utf8');
 
   // 1. Process Registrations Table
   if (fs.existsSync(registrationsPath)) {
-    const registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
+    registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
     console.log(`Found ${registrations.length} registrations.`);
     const regTable = generateRegistrationTable(registrations);
+
+    // Update both files
     readmeContent = replaceSection(readmeContent, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
+    contributingContent = replaceSection(contributingContent, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
   } else {
     console.log('No registrations file found, skipping registration update.');
   }
 
   // 2. Process Submissions Table
   if (fs.existsSync(submissionsPath)) {
-    const submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
+    submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
     console.log(`Found ${submissions.length} submissions.`);
     const subTable = generateSubmissionTable(submissions);
+
+    // Update both files
     readmeContent = replaceSection(readmeContent, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
+    contributingContent = replaceSection(contributingContent, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
   } else {
     console.log('No submissions file found, skipping submission update.');
   }
 
-  // Write changes back to registration doc
+  // Write changes back to both files
   fs.writeFileSync(registrationDocPath, readmeContent);
   console.log('Registration doc updated successfully.');
+
+  fs.writeFileSync(contributingPath, contributingContent);
+  console.log('CONTRIBUTING.md updated successfully.');
+
+  // Update README summary + tables (counts + link)
+  if (fs.existsSync(readmePath)) {
+    let mainReadme = fs.readFileSync(readmePath, 'utf8');
+    const summaryContent = `报名人数：${registrations.length}｜提交人数：${submissions.length}（名单详见 \`docs/REGISTRATION.md\`）`;
+    mainReadme = replaceSection(mainReadme, '<!-- Registration summary start -->', '<!-- Registration summary end -->', summaryContent);
+    if (regTable) {
+      mainReadme = replaceSection(mainReadme, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
+    }
+    if (subTable) {
+      mainReadme = replaceSection(mainReadme, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
+    }
+    fs.writeFileSync(readmePath, mainReadme);
+    console.log('README summary updated successfully.');
+  }
 
 } catch (error) {
   console.error('Error updating README:', error);

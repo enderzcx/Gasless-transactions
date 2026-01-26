@@ -54,6 +54,11 @@
 - [YouTube 教程](https://www.youtube.com/xxxx)
 
 
+**报名/提交概览：**
+<!-- Registration summary start -->
+
+报名人数：9｜提交人数：3（名单详见 `docs/REGISTRATION.md`）
+<!-- Registration summary end -->
 
 **赛事交流群：（如果社群已满 200 人，需添加运营人员微信邀请入群： clynn2024）**
 <p align="center">
@@ -261,6 +266,37 @@
 </table>
 
 
+## 报名与提交列表
+
+报名/提交名单会自动同步（约 1 分钟内更新）。也可查看独立页面：`docs/REGISTRATION.md`
+
+<details>
+<summary>报名列表（点击展开）</summary>
+
+<!-- Registration start -->
+| 姓名 | GitHub ID | 联系方式 | 组队意愿 | 备注 | 更新资料 |
+| ---- | ----------- | ----------- | ----------- | ------- | ------- |
+| Draken | DrakenZeng | @Draken_Zeng | 愿意 |无 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20Draken&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20Draken%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%40Draken_Zeng%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%84%BF%E6%84%8F%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%97%A0) |
+| Serena | Serenayyy123 | 微信: shoujiyangt2559 | 愿意 |有AI想法的小伙伴求组队 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20Serena&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20Serena%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%E5%BE%AE%E4%BF%A1%3A%20shoujiyangt2559%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%84%BF%E6%84%8F%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%9C%89AI%E6%83%B3%E6%B3%95%E7%9A%84%E5%B0%8F%E4%BC%99%E4%BC%B4%E6%B1%82%E7%BB%84%E9%98%9F) |
+| Vincent | vincentxthen | @VincentXthen @VincentXthen VincentXthen@gmail.com | ASDASDASDADS |VincentVincentVincent | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20Vincent&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20Vincent%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%40VincentXthen%20%40VincentXthen%20VincentXthen%40gmail.com%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20ASDASDASDADS%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20VincentVincentVincent) |
+| 测试 | beetroot42 | 测试 | 测试 |测试 | [更新](https://github.com/CasualHackathon/agenthack/issues/new?title=Registration%20-%20%E6%B5%8B%E8%AF%95&body=Name%20%5B%E5%A7%93%E5%90%8D%5D%3A%20%E6%B5%8B%E8%AF%95%0AContactMethod%20%5B%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%5D%3A%20%E6%B5%8B%E8%AF%95%0AWantsTeam%20%5B%E7%BB%84%E9%98%9F%E6%84%8F%E6%84%BF%5D%3A%20%E6%B5%8B%E8%AF%95%0AComment%20%5B%E5%A4%87%E6%B3%A8%5D%3A%20%E6%B5%8B%E8%AF%95) |
+
+<!-- Registration end -->
+
+</details>
+
+<details>
+<summary>提交名单（点击展开）</summary>
+
+<!-- Submission start -->
+
+| 项目名称 | GitHub ID | 项目描述 | 项目链接 | 提交时间 |
+| --------- | --------- | -------- | -------- | -------- |
+| 待更新... | - | - | - | - |
+
+<!-- Submission end -->
+
+</details>
 
 ## **05｜常见问题 (FAQ)**
 
