@@ -52,7 +52,8 @@
 
 | # | 姓名 | 个人介绍 | 联系方式 | 组队意愿 | 赛道选择 | 备注 | 更新资料 |
 | --- | --------- | -------- | -------- | -------- | -------- | ---- | -------- |
-| 1 | Draken | Draken | Draken | Draken | - | Draken | [编辑](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/62) |
+| 1 | Elon | 我是Tob5交易所合约开发工程师，熟悉ethereum的合约开发，在学习AI相关开发，对AI与区块链结合有很多想法 | Telegram:@ElonCYL 微信:CYL-Elon 邮箱：elonc714@gamil.com | 可能 | - | 要做AI 结合区块链的项目 | [编辑](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/63) |
+| 2 | Draken | Draken | Draken | Draken | - | Draken | [编辑](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/62) |
 
 <!-- Registration end -->
 
