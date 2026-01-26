@@ -97,14 +97,12 @@
 - 实现一个具备支付/结算功能的 Demo（Hello World 级别即可，重点是跑通流程）。
 
 **📝更多信息：**
+- 待更新
 
-- API/SDK：包含“一键调用支付”接口文档（见仓库 `/docs/kite` 或官方链接）
-- Demo 代码：AI Agent 自动转账最小示例 (Hello World)
-- 教程："AI 与支付链路打通" Workshop 视频/PPT
 ---
 ### **2.**  [**SpoonOS**](https://x.com/SpoonOS_ai) - **LLM 应用 (LLM Application Track)**
 
-**🎯 核心目标：**基于 SpoonOS Framework 调用大语言模型（LLM），构建 **可执行的 AI 应用或 Agent 工作流**，而不仅仅是单轮对话 Demo。**
+**🎯 核心目标：基于 SpoonOS Framework 调用大语言模型（LLM），构建 **可执行的 AI 应用或 Agent 工作流**，而不仅仅是单轮对话 Demo。**
 
 **💡 开发灵感**
 
@@ -120,9 +118,7 @@
 **📝更多信息**
 
 - 技术文档：[**SpoonOS · 最低技术使用要求（Hackathon）**](https://www.notion.so/SpoonOS-Hackathon-2f1bbd63be8780db8c59c20349715dd5?pvs=21)
-- 模板库：常见 Agent 工作流模板 (抓取 -> 总结 -> 发布)
-- FAQ：环境安装与模型调用报错排查手册
-- Workshop 回放：Rick 老师 SpoonOS 实战教学
+
 ---
 ### **3.**  [**OGBC**](https://x.com/ogbcgroup) × [**ScalingX**](https://x.com/Scaling_X) - **预测市场 (Prediction Market Track)**
 
@@ -140,10 +136,6 @@
 - 设计合理的激励机制（如何防止作恶，如何激励正确预测）。
 
 **📝更多信息**
-
-- 架构图：预测市场底层逻辑与合约交互图解（小白友好）
-- 案例库：优秀预测市场项目参考案例
-- 实战题目：项目方发布的实战预测任务素材
 - 学习资料：https://github.com/ogalias/OGBC-Intern-Project
 ---
 ### **🧰 工具支持  [**DataDance**](https://x.com/DataDanceChain)  SDK**
@@ -165,21 +157,6 @@
 - Zoom 链接：[ZOOM_LINK]
 
 
-
-
-
-
-
-
-## 04 | 评委介绍（Judging Panel）
-
-| 姓名           | 身份            | 专长                |
-| -------------- | --------------- | ------------------- |
-| [JUDGE_1_NAME] | [JUDGE_1_TITLE] | [JUDGE_1_EXPERTISE] |
-| [JUDGE_2_NAME] | [JUDGE_2_TITLE] | [JUDGE_2_EXPERTISE] |
-| [JUDGE_3_NAME] | [JUDGE_3_TITLE] | [JUDGE_3_EXPERTISE] |
-| [JUDGE_4_NAME] | [JUDGE_4_TITLE] | [JUDGE_4_EXPERTISE] |
-| [JUDGE_5_NAME] | [JUDGE_5_TITLE] | [JUDGE_5_EXPERTISE] |
 
 
 
@@ -257,7 +234,7 @@
     </tr>
 </table>
 
-## **05｜常见问题 (FAQ)**
+## **04｜常见问题 (FAQ)**
 
 **Q: 我没有技术背景可以参加吗？** A: 完全可以！我们鼓励非技术背景的参赛者参加。你可以专注于产品设计、运营策划、市场营销等方面，或者使用 AI 工具辅助。
 
@@ -268,8 +245,4 @@
 **Q: 代码必须在黑客松期间完成吗？** A: 是的，所有代码需要在活动期间提交。可以基于现有框架进行开发。
 
 **Q: 获奖后有什么后续支持？** A: 将有机会进入获奖赛道的**长期生态孵化**，**官方推广、合作伙伴曝光以及开发资源支持**。
-
-## 🔗 快速链接
-
-- 🐛 [问题反馈](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues)
 
