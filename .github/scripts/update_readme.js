@@ -13,6 +13,7 @@ const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
 const registrationDocPath = process.env.REGISTRATION_DOC_PATH
   ? path.resolve(workspace, process.env.REGISTRATION_DOC_PATH)
   : path.join(workspace, 'docs', 'REGISTRATION.md');
+const readmePath = path.join(workspace, 'README.md');
 const registrationsPath = process.env.REGISTRATIONS_PATH;
 const submissionsPath = process.env.SUBMISSIONS_PATH;
 
@@ -163,10 +164,12 @@ function replaceSection(content, startMarker, endMarker, newContent) {
 try {
   // Read current registration doc
   let readmeContent = fs.readFileSync(registrationDocPath, 'utf8');
+  let registrations = [];
+  let submissions = [];
 
   // 1. Process Registrations Table
   if (fs.existsSync(registrationsPath)) {
-    const registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
+    registrations = JSON.parse(fs.readFileSync(registrationsPath, 'utf8'));
     console.log(`Found ${registrations.length} registrations.`);
     const regTable = generateRegistrationTable(registrations);
     readmeContent = replaceSection(readmeContent, '<!-- Registration start -->', '<!-- Registration end -->', regTable);
@@ -176,7 +179,7 @@ try {
 
   // 2. Process Submissions Table
   if (fs.existsSync(submissionsPath)) {
-    const submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
+    submissions = JSON.parse(fs.readFileSync(submissionsPath, 'utf8'));
     console.log(`Found ${submissions.length} submissions.`);
     const subTable = generateSubmissionTable(submissions);
     readmeContent = replaceSection(readmeContent, '<!-- Submission start -->', '<!-- Submission end -->', subTable);
@@ -187,6 +190,15 @@ try {
   // Write changes back to registration doc
   fs.writeFileSync(registrationDocPath, readmeContent);
   console.log('Registration doc updated successfully.');
+
+  // Update README summary (counts + link)
+  if (fs.existsSync(readmePath)) {
+    let mainReadme = fs.readFileSync(readmePath, 'utf8');
+    const summaryContent = `报名人数：${registrations.length}｜提交人数：${submissions.length}（名单详见 \`docs/REGISTRATION.md\`）`;
+    mainReadme = replaceSection(mainReadme, '<!-- Registration summary start -->', '<!-- Registration summary end -->', summaryContent);
+    fs.writeFileSync(readmePath, mainReadme);
+    console.log('README summary updated successfully.');
+  }
 
 } catch (error) {
   console.error('Error updating README:', error);
