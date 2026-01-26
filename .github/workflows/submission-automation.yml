@@ -126,6 +126,7 @@ jobs:
           # Add submission files and updated documentation
           git add submissions/
           git add README.md
+          git add CONTRIBUTING.md
 
           # Check if there are changes to commit
           if git diff --staged --quiet; then

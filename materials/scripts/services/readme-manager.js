@@ -30,10 +30,8 @@ class ReadmeManager {
      * @param {string} tableContent - 表格内容
      */
     static updateReadmeSection(sectionType, tableContent) {
-        // REGISTRATION 表格在 CONTRIBUTING.md 中，SUBMISSION 表格在 README.md 中
-        const readmePath = sectionType === 'REGISTRATION'
-            ? this.getContributingPath()
-            : this.getReadmePath();
+        // REGISTRATION 和 SUBMISSION 表格都在 CONTRIBUTING.md 中
+        const readmePath = this.getContributingPath();
         const markers = README_MARKERS[sectionType];
 
         if (!markers) {
@@ -48,8 +46,7 @@ class ReadmeManager {
         );
 
         FileManager.writeFileContent(readmePath, updatedContent);
-        const fileName = sectionType === 'REGISTRATION' ? 'CONTRIBUTING.md' : 'README.md';
-        console.log(`${fileName} ${sectionType} 区域已更新`);
+        console.log(`CONTRIBUTING.md ${sectionType} 区域已更新`);
     }
 
     /**
