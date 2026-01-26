@@ -36,7 +36,7 @@
 | 🛠 Tech Workshop | 1月29日 | 📍 Zoom | Zoom 链接（待补充） |
 | 💬 AMA / Workshop | 1月28/30日 | 📍 Zoom / Twitter | 链接（待补充） |
 | 📥 Demo 提交截止 | 2月1日 中午 12:00 | 📍 GitHub Issue | [👉 点击此处提交 Demo](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=submission.md) |
-| 🏁 Demo Day (路演) | 2月1日 20:00-22:00 | 📍 Zoom | Zoom 链接（待补充） |
+| 🏁 Demo Day (路演) | 2月1日 19:00-21:00 | 📍 Zoom | Zoom 链接（待补充） |
 | 🏆 获奖公示 (Awards) | 2月4日 | 📍 社区公告 | X 链接（待补充） |
 
 **报名入口：** [点击报名](https://github.com/CasualHackathon/SPARK-AI-Hackathon/issues/new?template=register.md)  
