@@ -169,13 +169,18 @@
 ## **04 | 评委&嘉宾介绍（Judges & Speakers）**
 
 | 名称 | 推特账号 | 身份 | 个人简单介绍 |
-| ---- | -------- | ---- | ------------ |
-|      |          |      |              |
-|      |          |      |              |
-|      |          |      |              |
-|      |          |      |              |
-|      |          |      |              |
-|      |          |      |              |
+| :---: | :---: | :---: | :--- |
+| <img src="./materials/images/Keylen.webp" width="50"><br>Keylen | [@keylen1010](https://twitter.com/keylen1010) | Open Day 嘉宾 | LXDAO S12-15 核心成员, 全栈开发, 5年 web3 从业开发经验 |
+| <img src="./materials/images/Reece.png" width="50"><br>Reece | [@Crypto_Reeeece](https://twitter.com/Crypto_Reeeece) | Open Day 嘉宾 | Predicting market pioneers、Web3 Creative Builder |
+| <img src="./materials/images/Weiling.jpeg" width="50"><br>Weiling | [@Weiling_Lee](https://twitter.com/Weiling_Lee) | Workshop 嘉宾 | |
+| <img src="./materials/images/Sue.png" width="50"><br>Sue | [@ssssy83717](https://twitter.com/ssssy83717) | Co-Building 嘉宾 | 擅长产品落地, 架构设计 |
+| <img src="./materials/images/XiaoHai67890.jpg" width="50"><br>XiaoHai67890 | [@XiaoHai67890](https://twitter.com/XiaoHai67890) | Co-Building 嘉宾 | Builder @ETHPanda |
+| <img src="./materials/images/Jintol.jpg" width="50"><br>Jintol | [@JintolOffi](https://twitter.com/JintolOffi) | Co-Building 嘉宾 | Builder @ETHPanda_Org |
+| <img src="./materials/images/Ray.jpg" width="50"><br>Roy | [@rayoo_eth](https://twitter.com/rayoo_eth) | AMA 嘉宾 | LXDAO 核心贡献者,LXDAO 的早期成员主要研究以太坊和公共物品 |
+| <img src="./materials/images/Iris.jpeg" width="50"><br>Iris | | SpoonOS评委 | SpoonOS Community Operations |
+| <img src="./materials/images/Elizabeth.jpeg" width="50"><br>Elizabeth | [@elizabethyaaa](https://twitter.com/elizabethyaaa) | SpoonOS评委 | Core Contributor at SpoonOS |
+| <img src="./materials/images/Jayden_Wei.jpeg" width="50"><br>Jayden Wei | [@JaydenWei](https://twitter.com/JaydenWei) | OGBC评委 | OGBC Group 创始人, VC/PE/ MFO |
+| <img src="./materials/images/Wachi.jpeg" width="50"><br>Wachi | [@0xwachi_](https://twitter.com/0xwachi_) | 技术评委 | LXDAO Builder |
 
 ## **05 主办方 (Host)**
 
