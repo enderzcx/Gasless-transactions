@@ -172,7 +172,7 @@
 | :--- | :--- | :--- | :--- |
 | <img src="./materials/images/Keylen.webp" width="50"><br>**Keylen**<br>[@keylen1010](https://twitter.com/keylen1010) | 1月28日 | Open Day 嘉宾 | LXDAO S12-15 核心成员, 全栈开发, 5年 web3 从业开发经验 |
 | <img src="./materials/images/Reece.png" width="50"><br>**Reece**<br>[@Crypto_Reeeece](https://twitter.com/Crypto_Reeeece) | 1月28日 | Open Day 嘉宾 | Predicting market pioneers、Web3 Creative Builder |
-| <img src="./materials/images/Weiling.jpeg" width="50"><br>**Weiling**<br>[@Weiling_Lee](https://twitter.com/Weiling_Lee) | 1月29日 | Workshop 嘉宾 | |
+| <img src="./materials/images/Weiling.jpeg" width="50"><br>**Weiling**<br>[@Weiling_Lee](https://twitter.com/Weiling_Lee) | 1月29日 | Workshop 嘉宾 | SpoonOS Core Developer |
 | <img src="./materials/images/Sue.png" width="50"><br>**Sue**<br>[@ssssy83717](https://twitter.com/ssssy83717) | 1月29日 | Co-Building 嘉宾 | 擅长产品落地, 架构设计 |
 | <img src="./materials/images/XiaoHai67890.jpg" width="50"><br>**XiaoHai67890**<br>[@XiaoHai67890](https://twitter.com/XiaoHai67890) | 1月30日 | Co-Building 嘉宾 | Builder [@ETHPanda_Org](https://twitter.com/ETHPanda_Org) |
 | <img src="./materials/images/Jintol.jpg" width="50"><br>**Jintol**<br>[@JintolOfficial](https://twitter.com/JintolOfficial) | 1月31日 | Co-Building 嘉宾 | Builder [@ETHPanda_Org](https://twitter.com/ETHPanda_Org) |
