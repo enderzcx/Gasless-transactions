@@ -93,9 +93,10 @@
 * 官方账号：
   * [https://x.com/KiteAIChinese；](https://x.com/KiteAIChinese%EF%BC%9B)
   * [https://x.com/GoKiteAI](https://x.com/GoKiteAI)
-* 官方网站：[https://gokite.ai/](https://gokite.ai/)
-* SDK 文件：[https://docs.gokite.ai/kite-chain/5-advanced/account-abstraction-sdk](https://docs.gokite.ai/kite-chain/5-advanced/account-abstraction-sdk)
-* 参考资料与指南：[https://docs.google.com/document/d/1Qfrpp9jUqA1nf1b-so4ytBoat1xG_Pb05BaOCgRvAIY/edit?tab=t.0](https://docs.google.com/document/d/1Qfrpp9jUqA1nf1b-so4ytBoat1xG_Pb05BaOCgRvAIY/edit?tab=t.0)
+*  官方网站：[Kite - The First AI Payment Blockchain](https://gokite.ai/)
+* [SDK 文件](https://docs.gokite.ai/kite-chain/5-advanced/account-abstraction-sdk)
+
+* [参考资料与指南](https://docs.google.com/document/d/1Qfrpp9jUqA1nf1b-so4ytBoat1xG_Pb05BaOCgRvAIY/edit?tab=t.0)
 * 更多参考资料待更新中
 
 ---
