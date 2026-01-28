@@ -45,7 +45,7 @@
 **报名/提交概览：**
 
 <!-- Registration summary start -->
-报名人数：114｜提交人数：5（名单详见 `CONTRIBUTING.md`）
+报名人数：114｜提交人数：6（名单详见 `CONTRIBUTING.md`）
 <!-- Registration summary end -->
 
 
