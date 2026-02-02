@@ -4,7 +4,7 @@
 
 ## 主要功能(务必在生成AA地址和金库地址后向其转入Kite测试网USDThttps://faucet.gokite.ai/)
 
-- **登录页http://localhost:5173/**：一键进入系统（提示分配专属 KITE BOT）
+- **登录页**： 前端入口：http://localhost:5173/ 一键进入系统（提示分配专属 KITE BOT）
 - **需求下单**：输入需求 → 自动触发 USDT 转账 → 返回交易哈希/物流信息
 - **转账页**：手动转账 USDT（AA 账号发起）
 - **金库管理**：查看余额 / 设置单笔&日额度 / 充值 / 提现到 Owner
@@ -109,5 +109,6 @@ A: 确认后端已启动，并在前端访问 `/api/records`。
 ---
 
 KITE BOT - 无感支付 AI Agent Demo
+
 
 
